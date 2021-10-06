@@ -14,7 +14,7 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-redux": "^7.1.7",
     "@types/store": "^2.0.2",
-    "axios": "^0.21.1",
+    "axios": "^0.22.0",
     "camelcase-keys": "^6.2.2",
     "classnames": "^2.3.1",
     "craco-alias": "^3.0.1",
