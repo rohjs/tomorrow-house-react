@@ -73,7 +73,7 @@ export const StyledProductInfoPrice = styled.div`
   margin-bottom: 16px;
 
   .originalPriceWrapper,
-  .salePriceWrapper {
+  .sellingPriceWrapper {
     ${flexbox('start')};
   }
 
@@ -83,11 +83,11 @@ export const StyledProductInfoPrice = styled.div`
     }
   }
 
-  .salePriceWrapper {
+  .sellingPriceWrapper {
     margin-bottom: 12px;
   }
 
-  .salePrice {
+  .sellingPrice {
     margin-right: 4px;
   }
 
@@ -111,15 +111,15 @@ export const StyledProductInfoPrice = styled.div`
       }
     }
 
-    .salePriceWrapper {
+    .sellingPriceWrapper {
       margin-bottom: -1px;
 
-      .salePrice {
+      .sellingPrice {
         margin-right: 8px;
       }
     }
 
-    .mileage {
+    .point {
       margin-bottom: 20px;
     }
   `}
@@ -182,5 +182,9 @@ export const StyledProductInfoDelivery = styled.div`
     .misc {
       margin-top: 4px;
     }
+  `}
+
+  ${media.greaterThan('desktop')`
+    margin-bottom: 24px;
   `}
 `

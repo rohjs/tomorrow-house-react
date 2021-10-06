@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import { TinySliderSettings } from 'tiny-slider-react'
 
 import { useAppSelector } from 'src/hooks'
-import { getProductImages } from 'src/app/product/detail'
+import { getCarouselImages } from 'src/app/product/detail'
 
 import { Slider, Thumbnails } from 'src/components'
 import { StyledProductCarousel } from './styles'
@@ -15,10 +15,10 @@ const productCarouselOptions: TinySliderSettings = {
 }
 
 const ProductCarousel: React.FC = () => {
-  const productImages = useAppSelector(getProductImages)
+  const carouselImages = useAppSelector(getCarouselImages)
   const id = 'product-carousel'
 
-  if (!productImages.length) return null
+  if (!carouselImages.length) return null
 
   return (
     <StyledProductCarousel>
@@ -26,11 +26,11 @@ const ProductCarousel: React.FC = () => {
         className="productCarouselSlider"
         id={id}
         options={productCarouselOptions}
-        images={productImages}
+        images={carouselImages}
       />
       <Thumbnails
         id={id}
-        images={productImages}
+        images={carouselImages}
         tabletSize={56}
         desktopSize={75}
         className="productCarouselThumbnail"

@@ -2,14 +2,13 @@ import React, { memo } from 'react'
 
 import { useAppSelector } from 'src/hooks'
 import { formatPrice } from 'src/utils/num'
-import { getDeliveryBackwoodsFee, getDeliveryFee } from 'src/app/product/detail'
+import { getDeliveryFee } from 'src/app/product/detail'
 
 import { Tag } from 'src/components'
 import { StyledProductInfoDelivery } from './styles'
 
 const ProductInfoDelivery: React.FC = () => {
-  const fee = useAppSelector(getDeliveryFee)
-  const backwoodsFee = useAppSelector(getDeliveryBackwoodsFee)
+  const { backwoodsFee, fee } = useAppSelector(getDeliveryFee)
 
   return (
     <StyledProductInfoDelivery>

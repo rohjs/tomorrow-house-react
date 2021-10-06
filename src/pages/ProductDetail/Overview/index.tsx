@@ -3,7 +3,7 @@ import React from 'react'
 import { useAppSelector } from 'src/hooks'
 import { getBreadcrumbLinks } from 'src/app/product/detail'
 
-import { Breadcrumb, Column, Container, Grid, Row } from 'src/components'
+import { Breadcrumb, Column, Container, Row } from 'src/components'
 import ProductCarousel from './ProductCarousel'
 import ProductInfo from './ProductInfo'
 

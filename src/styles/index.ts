@@ -54,6 +54,7 @@ const colors = {
 }
 
 const levels = {
+  productTab: 40,
   lnb: 50,
   gnb: 60,
   overlay: 100,

@@ -65,6 +65,11 @@ export const StyledGlobalHeader = styled.div`
   ${media.greaterThan('tablet')`
     height: ${stripPx(GNB_HEIGHT_LG) + stripPx(LNB_HEIGHT_LG)}px;
 
+    .gnb {
+      position: fixed;
+      top: 0 !important;
+    }
+
     &.scrollDown {
       .gnb {
         top: -${GNB_HEIGHT_LG};

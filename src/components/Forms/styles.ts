@@ -12,7 +12,7 @@ export const StyledFormControl = styled.input`
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 4px;
   color: ${({ theme }) => theme.colors.primary};
-  transition: background-color 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out;
   appearance: none;
 
   &.active {
@@ -70,6 +70,7 @@ export const StyledSelectGroup = styled(StyledFormGroup)`
   .icon {
     ${positionCenterY()};
     right: 8px;
+    left: auto;
     font-size: 24px;
     color: ${({ theme }) => theme.colors.tertiary};
   }

@@ -1,7 +1,7 @@
-import React, { memo } from 'react'
+import React from 'react'
 
 import { useAppSelector, useResponsive } from 'src/hooks'
-import { getMileage, getPrice } from 'src/app/product/detail'
+import { getPoint, getPrice } from 'src/app/product/detail'
 
 import { Price, PriceOff, Tag } from 'src/components'
 import {
@@ -10,23 +10,23 @@ import {
   StyledProductInfoPrice,
 } from './styles'
 
-const ProductInfoPrice: React.FC = () => {
-  const { originalPrice, salePrice, isOnDiscount } = useAppSelector(getPrice)
-  const mileage = useAppSelector(getMileage)
-  const discountRate =
-    100 - Math.ceil((Number(salePrice) / Number(originalPrice)) * 100)
+export const ProductInfoPrice: React.FC = () => {
+  const point = useAppSelector(getPoint)
+  const { originalPrice, sellingPrice, isOnDiscount, percentage } =
+    useAppSelector(getPrice)
+
   const { isMobile } = useResponsive()
 
   const discount = (
     <StyledProductInfoDiscount className="discount">
-      <span className="rate">{discountRate}</span>
+      <span className="rate">{percentage}</span>
       <span className="percent">%</span>
     </StyledProductInfoDiscount>
   )
 
-  const mileageGuide = (
-    <StyledProductInfoMileage className="mileage">
-      <strong aria-label={`${mileage} 포인트`}>{mileage}P</strong>
+  const pointGuide = (
+    <StyledProductInfoMileage className="point">
+      <strong aria-label={`${point.value} 포인트`}>{point.value}P</strong>
       적립해드립니다. (VIP 3배 혜택 적용됨)
     </StyledProductInfoMileage>
   )
@@ -39,12 +39,12 @@ const ProductInfoPrice: React.FC = () => {
           <PriceOff amount={originalPrice} />
         </div>
 
-        <div className="salePriceWrapper">
-          <Price className="salePrice" amount={salePrice} size={20} />
+        <div className="sellingPriceWrapper">
+          <Price className="sellingPrice" amount={sellingPrice} size={20} />
           <Tag color="red" label="특가" />
         </div>
 
-        {mileageGuide}
+        {pointGuide}
       </StyledProductInfoPrice>
     )
 
@@ -55,17 +55,14 @@ const ProductInfoPrice: React.FC = () => {
 
         <div>
           <PriceOff amount={originalPrice} />
-          <div className="salePriceWrapper">
-            <Price className="salePrice" amount={salePrice} size={32} />
+          <div className="sellingPriceWrapper">
+            <Price className="sellingPrice" amount={sellingPrice} size={32} />
             <Tag color="red" label="특가" />
           </div>
         </div>
       </div>
 
-      {mileageGuide}
+      {pointGuide}
     </StyledProductInfoPrice>
   )
 }
-
-const MemoProductInfoPrice = memo(ProductInfoPrice)
-export { MemoProductInfoPrice as ProductInfoPrice }

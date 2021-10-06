@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { ProductOrderControls, ProductOrderCheckouts } from '../../Forms'
 import { ProductInfoHeader } from './Header'
 import { ProductInfoPrice } from './Price'
 import { ProductInfoDelivery } from './Delivery'
@@ -11,6 +12,8 @@ const ProductInfo: React.FC = () => {
       <ProductInfoHeader />
       <ProductInfoPrice />
       <ProductInfoDelivery />
+      <ProductOrderControls id="product-info" />
+      <ProductOrderCheckouts id="product-info" />
     </StyledProductInfo>
   )
 }
