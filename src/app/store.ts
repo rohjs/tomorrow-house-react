@@ -1,21 +1,23 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 
-import authReducer from './auth'
-import modalReducer from './modal'
-import searchHistoryReducer from './searchHistory'
-import systemReducer from './system'
-import toastReducer from './toast'
+import auth from './auth'
+import modal from './modal'
+import searchHistory from './searchHistory'
+import system from './system'
+import toast from './toast'
 
-import productDetailReducer from './product/detail'
+import productDetail from './product/detail'
+import productCheckout from './product/checkout'
 
 export const store = configureStore({
   reducer: {
-    auth: authReducer,
-    modal: modalReducer,
-    searchHistory: searchHistoryReducer,
-    system: systemReducer,
-    toast: toastReducer,
-    productDetail: productDetailReducer,
+    auth,
+    modal,
+    searchHistory,
+    system,
+    toast,
+    productDetail,
+    productCheckout,
   },
 })
 
