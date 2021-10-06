@@ -1,16 +1,10 @@
-import {
-  useHistory,
-  useLocation,
-  useParams,
-  useRouteMatch,
-} from 'react-router-dom'
+import { useHistory, useLocation, useRouteMatch } from 'react-router-dom'
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search)
 }
 
 export const useRouter = () => {
-  const params = useParams()
   const location = useLocation()
   const history = useHistory()
   const match = useRouteMatch()
