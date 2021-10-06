@@ -1,68 +1,81 @@
-declare interface Product {
-  id: string
-  seller: ProductSeller
-  title: string
-  rating: ProductRating
-  price: ProductPrice
-  mileage: number
-  delivery: ProductDelivery
-  detailImages: string[]
-  productImages: string[]
-  soldOut: boolean
-  sellingOptions: ProductSellingOption[]
-  category: ProductCategory[]
-}
-
-declare interface ProductCategory {
-  category: string
-  url: string
-}
-
-declare interface ProductDelivery {
-  fee: ProductDeliveryFee
-  refundExchangeInfo: {
-    refundFee: number
-    exchangeFee: number
-    address: string
+declare namespace Product {
+  interface Brand {
+    exist: boolean
+    id: number
+    introduction: string | null
+    name: string
+    profileImgUrl: string | null
   }
-}
 
-declare interface ProductDeliveryFee {
-  fee: number
-  backwoodsFee: number
-}
+  interface Card {
+    id: number
+    imgUrl: string
+    isCollection: boolean
+    isReview: boolean
+    nickname: string
+    profileImgUrl: string
+    thumbnailImgUrl: string
+    userId: number
+  }
 
-declare interface ProductPrice {
-  originalPrice: number
-  salePrice: number
-  isOnDiscount: boolean
-  discountExpiresAt: number | null
-}
+  interface Category {
+    id: number
+    title: string
+    hash: string
+  }
 
-declare interface ProductRating {
-  averageRating: number
-  count: number
-  countFor1: number
-  countFor2: number
-  countFor3: number
-  countFor4: number
-  countFor5: number
-}
+  interface DeliveryFee {
+    backwoodsFee: number
+    fee: number
+    freeThreshold: number
+    isRegionalDeliveryFee: boolean
+    nativeType: number
+    payAt: number
+    type: number
+  }
 
-declare interface ProductSeller {
-  id: string
-  company: string
-  representative: string
-  csPhone: string
-  address: string
-  email: string
-  license: string
-}
+  interface DeliveryRestrict {
+    deliveryEtc: string
+    deliveryOutOfCapital: boolean
+    deliveryToBackwoods: boolean
+    deliveryToJeju: boolean
+  }
 
-declare interface ProductSellingOption {
-  required: boolean
-  options: {
+  interface ExtraOption {
+    explain: string
+    id: number
+    isMain: boolean
+    sellingCost: number
+    stock: number
+    undiscountedCost: number
+  }
+
+  interface Informaton {
+    displayName: string
     content: string
-    price: number
-  }[]
+  }
+
+  interface Option {
+    explain: string
+    explain2: string
+    id: number
+    isMain: boolean
+    position: number
+    reentryAt: number | null
+    sellingCost: number
+    stock: number
+    undiscountedCost: number
+  }
+
+  interface Point {
+    value: number
+    reason: string
+    percentage: number
+  }
+
+  interface RefundExchangeInfo {
+    address: string
+    exchangeFee: number
+    refundFee: number
+  }
 }
