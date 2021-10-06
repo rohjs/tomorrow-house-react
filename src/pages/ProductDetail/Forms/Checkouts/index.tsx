@@ -19,7 +19,9 @@ const ProductOrderCheckouts: React.FC<ProductOrderCheckoutsProps> = ({
       {Object.entries(checkouts).map(([optionId, count]) => {
         const key = `${id}-checkout-item-${optionId}`
         return (
-          <CheckoutItem key={key} id={id} optionId={optionId} count={count} />
+          <li key={key}>
+            <CheckoutItem id={id} optionId={optionId} count={count} />
+          </li>
         )
       })}
     </ol>

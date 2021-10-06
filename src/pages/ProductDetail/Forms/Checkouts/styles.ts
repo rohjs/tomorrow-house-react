@@ -69,7 +69,7 @@ export const StyledCheckoutItem = styled.div`
       appearance: none;
     }
 
-    i {
+    svg {
       ${positionCenterY()};
       right: 2px;
       font-size: 20px;

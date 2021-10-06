@@ -11,6 +11,16 @@ export const StyledProductInfo = styled.section`
 
   ${media.greaterThan('desktop')`
     margin-bottom: 20px;
+
+    .productInfoForm {
+      ol {
+        margin-top: 20px;
+      }
+
+      li:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
   `}
 `
 
