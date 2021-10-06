@@ -27,13 +27,13 @@ export const Slider: React.FC<SliderProps> = ({
   return (
     <StyledSlider className={className} role="region">
       <TinySlider settings={{ ...DEFAULT_OPTIONS, ...options }}>
-        {images.map((image, index) => {
+        {images.map((imageUrl, index) => {
           const key = `${id}-slider-${index}`
 
           return (
             <StyledSliderItem key={key}>
               <figure>
-                <img src={`/samples/${image}`} data-src={image} alt="" />
+                <img src={imageUrl} data-src={imageUrl} alt="" />
               </figure>
             </StyledSliderItem>
           )

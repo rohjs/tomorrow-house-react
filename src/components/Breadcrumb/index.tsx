@@ -28,13 +28,6 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
           </React.Fragment>
         )
       })}
-      {/* <Link to="/">가전</Link>
-      <ChevronIcon className="chevron" aria-hidden />
-      <Link to="/">계절가전</Link>
-      <ChevronIcon className="chevron" aria-hidden />
-      <Link to="/">전기히터/온풍기</Link>
-      <ChevronIcon className="chevron" aria-hidden />
-      <Link to="/">전기히터</Link> */}
     </StyledBreadcrumb>
   )
 }

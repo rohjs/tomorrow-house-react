@@ -21,7 +21,7 @@ export const Thumbnails: React.FC<ThumbnailsProps> = ({
 }) => {
   return (
     <StyledThumbnails className={className}>
-      {images.map((image, index) => {
+      {images.map((imageUrl, index) => {
         return (
           <StyledThumbnailItem
             size={size}
@@ -29,7 +29,7 @@ export const Thumbnails: React.FC<ThumbnailsProps> = ({
             desktopSize={desktopSize}
             key={`${id}-slider-thumbnail-${index}`}
           >
-            <img src={`/samples/${image}`} alt={`${index}번 이미지 보기`} />
+            <img src={imageUrl} alt={`${index}번 이미지 보기`} />
           </StyledThumbnailItem>
         )
       })}
